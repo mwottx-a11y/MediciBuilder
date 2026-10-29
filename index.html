@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#5a1a14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Medici Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=EB+Garamond:ital,wght@0,500;0,700;1,500&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<header id="top">
+  <div id="res"></div>
+  <div id="status">
+    <button id="pop" class="pill"></button>
+    <button id="happy" class="pill"></button>
+    <button id="era" class="pill era"><b id="era-name"></b><span class="bar"><i id="era-bar"></i></span><small id="era-txt"></small></button>
+  </div>
+</header>
+
+<div id="fx"></div>
+<div id="toasts"></div>
+
+<div id="cam-ctl">
+  <button data-cam="left" aria-label="Rotate view left">⟲</button>
+  <button data-cam="right" aria-label="Rotate view right">⟳</button>
+  <button data-cam="home" aria-label="Centre on the Signoria">⌂</button>
+</div>
+
+<section id="placing" class="sheet" hidden>
+  <img id="pl-img" alt="">
+  <div class="pl-info"><b id="pl-name"></b><span id="pl-cost"></span><small id="pl-hint"></small></div>
+  <button id="pl-rot" class="round" aria-label="Rotate building">⟳</button>
+  <button id="pl-x" class="round" aria-label="Stop building">✕</button>
+</section>
+
+<section id="drawer" class="sheet" hidden>
+  <div id="tabs"></div>
+  <div id="cards"></div>
+</section>
+
+<section id="inspect" class="sheet" hidden></section>
+
+<nav id="bar">
+  <button data-tool="build"><span>🏗️</span>Build</button>
+  <button data-tool="tech"><span>📜</span>Research<i class="badge" id="tech-badge" hidden></i></button>
+  <button data-tool="quests"><span>📋</span>Patrons<i class="badge" id="quest-badge" hidden></i></button>
+  <button data-tool="demolish"><span>🔨</span>Demolish</button>
+  <button data-tool="menu"><span>☰</span>Menu</button>
+</nav>
+
+<div id="techtree" class="full" hidden>
+  <div class="full-head">
+    <h2>Libro dell'Ingegno</h2>
+    <span id="tt-ideas"></span>
+    <button class="round close" data-close="techtree">✕</button>
+  </div>
+  <div id="tt-scroll"><div id="tt-grid"><svg id="tt-lines"></svg></div></div>
+  <div id="tt-detail"></div>
+</div>
+
+<div id="quests" class="full" hidden>
+  <div class="full-head">
+    <h2>Commissions</h2>
+    <button class="round close" data-close="quests">✕</button>
+  </div>
+  <div id="q-list"></div>
+</div>
+
+<div id="modal" hidden><div class="card"></div></div>
+
+<div id="loading"><h1>Medici Builder</h1><p>Mixing the plaster…</p></div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
