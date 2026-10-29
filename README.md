@@ -10,7 +10,7 @@ Serve the folder over HTTP (ES modules don't load from `file://`):
 python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
-On a phone, open the same URL over your LAN, or host the folder anywhere static (GitHub Pages works). Progress saves to `localStorage`, and the city keeps earning while you're away (up to 8h).
+**Play online:** https://mwottx-a11y.github.io/MediciBuilder/ (GitHub Pages, deployed from the `claude/medici-builder-game` branch). On a phone, use Share → Add to Home Screen (iOS Safari) or ⋮ → Install app (Android Chrome) to get a full-screen app that also works offline. Progress saves to `localStorage`, and the city keeps earning while you're away (up to 8h).
 
 ## The loop
 

@@ -451,5 +451,8 @@ if (firstRun) {
 
 startCloud(game);
 
+// offline + installable when served as a normal website (GitHub Pages)
+if ('serviceWorker' in navigator && !window.claude) navigator.serviceWorker.register('sw.js').catch(() => {});
+
 // debugging handle
 window.medici = { game, world, ui, app };
