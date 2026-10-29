@@ -608,6 +608,16 @@ export class Game {
     return { sec, gains };
   }
 
+  // adopt a save from elsewhere (cloud backup); takes effect on next load
+  importSave(json) {
+    try {
+      const s = JSON.parse(json);
+      if (!Array.isArray(s.buildings) || !s.res) return false;
+      localStorage.setItem(SAVE_KEY, json);
+      return true;
+    } catch (e) { return false; }
+  }
+
   reset() {
     try { localStorage.removeItem(SAVE_KEY); } catch (e) { /* storage unavailable */ }
     this.newGame();

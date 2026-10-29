@@ -4,6 +4,7 @@ import { BUILDINGS, BUILDING_LIST, RES, ERAS, TECHS, LANDMARKS } from './data.js
 import { World, renderThumbs } from './render.js';
 import { UI } from './ui.js';
 import { sfx } from './audio.js';
+import { startCloud } from './cloud.js';
 
 const canvas = document.getElementById('c');
 const game = new Game();
@@ -447,6 +448,8 @@ if (firstRun) {
     buttons: [{ label: 'How to play', cls: 'alt', fn: help }, { label: 'Begin!', fn: () => ui.openQuests() }],
   });
 } else if (away) showAway(away);
+
+startCloud(game);
 
 // debugging handle
 window.medici = { game, world, ui, app };
