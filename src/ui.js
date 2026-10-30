@@ -167,7 +167,7 @@ export class UI {
     const g = this.g;
     for (const [card, d] of this.cardEls ?? []) {
       const unlocked = g.isUnlocked(d.id);
-      const built = d.unique && g.count(d.id) > 0;
+      const built = !!d.unique && g.count(d.id) > 0;
       card.classList.toggle('locked', !unlocked);
       card.classList.toggle('done', built);
       card.classList.toggle('new', unlocked && !this.seen.has(d.id));
